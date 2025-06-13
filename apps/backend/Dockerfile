@@ -1,5 +1,5 @@
 # Stage 1: Build with Maven
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.7-openjdk-17-slim AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
