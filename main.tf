@@ -45,6 +45,7 @@ module "eks" {
   }
 }
 
+provider "argocd" { 
 
 module "argocd" {
   source  = "cloudposse/argocd/aws"
@@ -70,4 +71,5 @@ module "argocd" {
   # Security
   rbac_enabled          = true
   create_iam_resources  = true
+}
 }
