@@ -21,7 +21,11 @@ module "eks" {
 }
 
 module "argocd" {
-  source      = "git::https://github.com/argoproj-labs/terraform-aws-argocd.git?ref=main"
-  cluster_id  = module.eks.cluster_id
-  oidc_issuer = module.eks.cluster_oidc_issuer_url
+  source  = "cloudposse/argocd/aws"
+  version = "0.5.0"  # Check for latest version
+  
+  cluster_name          = module.eks.cluster_id
+  cluster_endpoint      = module.eks.cluster_endpoint
+  cluster_certificate   = module.eks.cluster_certificate_authority_data
+  oidc_provider_arn     = module.eks.oidc_provider_arn
 }
