@@ -1,0 +1,17 @@
+replicaCount: 2
+image:
+  repository: joannedada/frontend
+  tag: "1.0.0"
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  # Domain-less configuration
+  paths:
+    - path: /
+      pathType: Prefix
