@@ -45,6 +45,7 @@ module "eks" {
   }
 }
 
+
 module "argocd" {
   source  = "cloudposse/argocd/aws"
   version = "0.5.0"
