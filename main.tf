@@ -35,12 +35,14 @@ module "eks" {
   # Enable IAM OIDC provider for IRSA
   enable_irsa = true
 
-  node_groups = {
-    eks_nodes = {
-      desired_capacity = 2
-      max_capacity     = 3
-      min_capacity     = 1
-      instance_type    = "t3.medium"
+  eks_managed_node_groups = {
+    default = {
+      desired_size = 2
+      min_size     = 1
+      max_size     = 3
+
+      instance_types = ["t3.medium"]
+      capacity_type  = "ON_DEMAND"
     }
   }
 }
