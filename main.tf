@@ -21,7 +21,7 @@ module "eks" {
 }
 
 module "argocd" {
-  source      = "git::https://github.com/obytes/terraform-aws-argocd.git?ref=main"
+  source      = "source = "git::https://github.com/argoproj-labs/terraform-aws-argocd.git?ref=main""
   cluster_id  = module.eks.cluster_id
   oidc_issuer = module.eks.cluster_oidc_issuer_url
 }
