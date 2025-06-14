@@ -9,6 +9,11 @@ spec:
     repoURL: https://github.com/joannedada/React-java-app.git
     targetRevision: HEAD
     path: charts/frontend
+    helm:
+      values: |
+        image:
+          repository: joannedada/backend
+          tag: "1.0.0"
   destination:
     server: https://kubernetes.default.svc
     namespace: default
