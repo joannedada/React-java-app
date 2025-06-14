@@ -27,7 +27,7 @@ provider "helm" {
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "19.15.3" # Pin to specific version
-  cluster_name    = "gitops-cluster"
+  cluster_name    = "react-cluster"
   cluster_version = "1.27"
   subnet_ids      = ["subnet-0d278c7a9fd1656ac", "subnet-0f663e00577162d72"]
   vpc_id          = "vpc-07d95f7f3f036f70b"
