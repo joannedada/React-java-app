@@ -1,4 +1,5 @@
 apiVersion: v2
+kind: metadata
 name: frontend
 description: React Frontend Helm Chart
 version: 0.1.0
